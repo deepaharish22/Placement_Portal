@@ -37,7 +37,6 @@
 	for (; $row=mysqli_fetch_assoc($x);) { 
     if ($row['company_name']==$compname)
      {
-      
       echo "<h4>  COMPANY NAME:-</h4>" ."<h5>".$row['company_name'] ." </h5>";
       echo "<h4>TOTAL NO OF ROUNDS</h4>" ."<h5>".$row['rounds'] ."</h5>";
       echo "<h4>NO OF ROUNDS ATTENDED</h4>" ."<h5>" .$row['rounds_attended'] ."</h5>";
@@ -50,6 +49,7 @@
          }
          else{
          	echo "NO ONE HAS  SHARED THEIR EXPERIENCE .....TRY AGAIN LATER..";
+		break;
          }
 }
 mysqli_close($con);

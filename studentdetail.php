@@ -49,6 +49,7 @@ WELCOME TO YOUR HOME PAGE.......
 	$password='';
 	$dbname='placement';
 	$regno=$_POST['registerno'];
+	$pwd=$_POST['password'];
 	$con=mysqli_connect($host,$username,$password,$dbname);
 	if (!$con) 
 	{
@@ -57,7 +58,7 @@ WELCOME TO YOUR HOME PAGE.......
 	$s="select*from placement_students";
 	$x=mysqli_query($con,$s);
 	for (; $row=mysqli_fetch_assoc($x);) { 
-    if ($row['regno']==$regno)
+    if ($row['regno']==$regno && $row['password']==$pwd)
      {
       
       echo "<h4> NAME:-</h4>" ."<h5>".$row['name'] ." </h5>";
